@@ -49,23 +49,6 @@ public class PracownicyInfo extends JFrame {
 
 	private JPanel contentPane;
 	
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PracownicyInfo frame = new PracownicyInfo();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	
 	Connection polaczenie = null;
 	private JTable table;
 	private JLabel lblId;
@@ -180,7 +163,7 @@ public class PracownicyInfo extends JFrame {
 		polaczenie = Polaczenie.dbconnect();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setTitle("Baza pracowników");
+		setTitle("Baza pracownikÃ³w");
 		setBounds(100, 100, 1000, 600);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -204,7 +187,7 @@ public class PracownicyInfo extends JFrame {
 								notatnik.append(sc.nextLine() + "\n");
 							}
 						} catch (FileNotFoundException e1) {
-							System.out.println("Nie mo¿na otworzyæ pliku!");
+							System.out.println("Nie moÂ¿na otworzyÃ¦ pliku!");
 							e1.printStackTrace();
 						}
 					}
@@ -230,7 +213,7 @@ public class PracownicyInfo extends JFrame {
 						}
 						sw.close();
 					} catch (FileNotFoundException e1) {
-						System.out.println("Nie mo¿na zapisaæ pliku!");
+						System.out.println("Nie moÂ¿na zapisaÃ¦ pliku!");
 						e1.printStackTrace();
 					}
 				}
@@ -243,7 +226,7 @@ public class PracownicyInfo extends JFrame {
 		mntmDrukuj.setAccelerator(KeyStroke.getKeyStroke("ctrl P"));
 		mntmDrukuj.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "Jeszcze nieobs³ugiwane... :)", "Drukuj", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Jeszcze nieobsÂ³ugiwane... :)", "Drukuj", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		mnPlik.add(mntmDrukuj);
@@ -256,7 +239,7 @@ public class PracownicyInfo extends JFrame {
 		mntmZamknij.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				int odpowiedz = JOptionPane.showConfirmDialog(null, "Czy napewno chcesz wyjœæ?", "Wyjœcie", JOptionPane.YES_NO_OPTION);
+				int odpowiedz = JOptionPane.showConfirmDialog(null, "Czy napewno chcesz wyjÅ“Ã¦?", "WyjÅ“cie", JOptionPane.YES_NO_OPTION);
 				if(odpowiedz==JOptionPane.YES_OPTION)
 				{
 					System.exit(JFrame.EXIT_ON_CLOSE);
@@ -389,9 +372,9 @@ public class PracownicyInfo extends JFrame {
 		mntmInfo.setAccelerator(KeyStroke.getKeyStroke("ctrl I"));
 		mntmInfo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "Prosty program, którego zadaniem jest pobieranie wartoœci z bazy danych (sqlite) i wstawienie ich do tabeli."
-						+ "\nZa pomoc¹ interfejsu mo¿emy dodawaæ u¿ytkownika, usuwaæ oraz uaktalniaæ dane.\nProgram wykorzystuje biblioteki swing, awt, jdbc oraz wielu innych ciekawych narzêdzi.\n"
-						+ "Interfejs zosta³ wykonany za pomoc¹ wbudowanego w program Eclipse -> Windows Builder\nWersja programu: 1.0", "Informacje", JOptionPane.INFORMATION_MESSAGE); 
+				JOptionPane.showMessageDialog(null, "Prosty program, ktÃ³rego zadaniem jest pobieranie wartoÅ“ci z bazy danych (sqlite) i wstawienie ich do tabeli."
+						+ "\nZa pomocÂ¹ interfejsu moÂ¿emy dodawaÃ¦ uÂ¿ytkownika, usuwaÃ¦ oraz uaktalniaÃ¦ dane.\nProgram wykorzystuje biblioteki swing, awt, jdbc oraz wielu innych ciekawych narzÃªdzi.\n"
+						+ "Interfejs zostaÂ³ wykonany za pomocÂ¹ wbudowanego w program Eclipse -> Windows Builder\nWersja programu: 1.0", "Informacje", JOptionPane.INFORMATION_MESSAGE); 
 								
 			}
 		});
@@ -548,7 +531,7 @@ public class PracownicyInfo extends JFrame {
 					
 					if(Integer.parseInt(idText.getText()) == 1)
 					{						
-						JOptionPane.showMessageDialog(null, "B³¹d! Zduplikowane ID, spróbuj ponownie!");						
+						JOptionPane.showMessageDialog(null, "BÂ³Â¹d! Zduplikowane ID, sprÃ³buj ponownie!");						
 					}	
 					else
 					{
@@ -586,7 +569,7 @@ public class PracownicyInfo extends JFrame {
 					
 					if(Integer.parseInt(idText.getText()) == 1)
 					{						
-						JOptionPane.showMessageDialog(null, "Nie mo¿na zmieniæ konta administratora!");						
+						JOptionPane.showMessageDialog(null, "Nie moÂ¿na zmieniÃ¦ konta administratora!");						
 					}
 					else{
 						preparestate.execute();
@@ -612,7 +595,7 @@ public class PracownicyInfo extends JFrame {
 		btnUsu = new JButton("Usu\u0144");
 		btnUsu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int czyZamknac = JOptionPane.showConfirmDialog(null, "Czy napewno chcesz usun¹æ u¿ytkownika?", "Usuwanie", JOptionPane.YES_NO_OPTION);
+				int czyZamknac = JOptionPane.showConfirmDialog(null, "Czy napewno chcesz usunÂ¹Ã¦ uÂ¿ytkownika?", "Usuwanie", JOptionPane.YES_NO_OPTION);
 				if(czyZamknac == 0)
 				{
 					try
@@ -622,12 +605,12 @@ public class PracownicyInfo extends JFrame {
 						
 						if(Integer.parseInt(idText.getText()) == 1)
 						{							
-							JOptionPane.showMessageDialog(null, "Nie mo¿na usun¹æ konta Administratora");							
+							JOptionPane.showMessageDialog(null, "Nie moÂ¿na usunÂ¹Ã¦ konta Administratora");							
 						}
 						else
 						{
 							preparestate.execute();
-							JOptionPane.showMessageDialog(null, "Usuniêto!");						
+							JOptionPane.showMessageDialog(null, "UsuniÃªto!");						
 						}
 						preparestate.close();					
 					}
